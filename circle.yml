@@ -1,0 +1,27 @@
+checkout:
+  post:
+    - touch checkoutfile
+    - ls
+dependencies:
+  pre:
+    - touch dep_pre
+    - ls
+  post:
+    - touch dep_post
+    - ls
+test:
+  override:
+    - touch 1t && ls
+        parallel: true
+    - touch 2t && ls
+        parallel: true
+    - touch 3t && ls
+        parallel: true
+    - touch 4t && ls
+        parallel: true
+deployment:
+  production:
+    branch: master
+    commands:
+      - ls
+  
