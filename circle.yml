@@ -11,8 +11,8 @@ dependencies:
     - ls
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) touch 1t && ls ;; 1) touch 2t && ls ;; 2) touch 3t && ls ;; 3) touch 4t && ls esac:
-      parallel: true
+    - case $CIRCLE_NODE_INDEX in 0) touch 1t && ls ;; 1) touch 2t && ls ;; 2) touch 3t && ls ;; 3) touch 4t && ls ;; esac:
+        parallel: true
 deployment:
   production:
     branch: master
