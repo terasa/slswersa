@@ -11,7 +11,6 @@ dependencies:
     - ls
 test:
   override:
-    parallel: true
     - touch 1t && ls
     - touch 2t && ls
     - touch 3t && ls
