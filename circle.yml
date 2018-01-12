@@ -3,7 +3,7 @@ dependencies:
     - echo "downloading dependencies"
 test:
   override:
-    - ls tests:
+    - cat:
         parallel: true
         files:
           - tests/3
