@@ -3,7 +3,7 @@ dependencies:
     - echo "downloading dependencies"
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) touch 1t && ls ;; 1) touch 2t && ls ;; 2) touch 3t && ls ;; 3) touch 4t && ls ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) echo "unit tests  package1" ;; 1) echo "unit tests  package1" ;; esac:
         parallel: true
 deployment:
   production:
