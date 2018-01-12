@@ -11,10 +11,13 @@ dependencies:
     - ls
 test:
   override:
-    - touch 1t && ls
-    - touch 2t && ls
-    - touch 3t && ls
-    - touch 4t && ls
+    - touch 
+      parallel: true
+      files:
+        - 1t && ls
+        - 2t && ls
+        - 3t && ls
+        - 4t && ls
 deployment:
   production:
     branch: master
