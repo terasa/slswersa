@@ -1,8 +1,8 @@
 checkout:
   post:
     - touch checkoutfile
-    - ls:
         parallel: false
+    - ls
 dependencies:
   pre:
     - touch dep_pre
