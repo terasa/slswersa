@@ -1,6 +1,6 @@
 checkout:
   post:
-    - touch checkoutfile
+    - touch checkoutfile:
         parallel: false
     - ls
 dependencies:
