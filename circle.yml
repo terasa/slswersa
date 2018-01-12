@@ -3,6 +3,11 @@ dependencies:
     - echo "downloading dependencies"
 test:
   override:
+    - ls tests/:
+        parallel: true
+        files:
+          - tests/1
+          - tests/*
     - case $CIRCLE_NODE_INDEX in 0) echo "unit tests  package1" ;; 1) echo "unit tests  package2" ;; esac:
         parallel: true
 deployment:
