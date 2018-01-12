@@ -1,14 +1,6 @@
-checkout:
-  post:
-    - touch checkoutfile
-    - ls
 dependencies:
-  pre:
-    - touch dep_pre
-    - ls
-  post:
-    - touch dep_post
-    - ls
+  override:
+    - echo "downloading dependencies"
 test:
   override:
     - case $CIRCLE_NODE_INDEX in 0) touch 1t && ls ;; 1) touch 2t && ls ;; 2) touch 3t && ls ;; 3) touch 4t && ls ;; esac:
@@ -17,4 +9,4 @@ deployment:
   production:
     branch: master
     commands:
-      - ls
+      - echo "running deployment script"
