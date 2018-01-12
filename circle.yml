@@ -11,7 +11,7 @@ dependencies:
     - ls
 test:
   override:
-    - touch 
+    - touch:
       parallel: true
       files:
         - 1t && ls
